@@ -1,16 +1,18 @@
-package part6;
+package part2;
 
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class chap6Section1 {
+public class chap2Section1 {
 
   public static void main(String[] args) {
 
@@ -36,6 +38,11 @@ public class chap6Section1 {
             .sorted()
             .collect(Collectors.toList());
 
+    numberList.stream()
+        .filter(x -> x > 0)
+        .max(Comparator.comparing(x -> x))
+        .orElseThrow();
+
     System.out.println(numberMap);
 
     Map<Integer, Integer> mapStream = new HashMap<>();
@@ -44,6 +51,10 @@ public class chap6Section1 {
     }
 
     System.out.println(number);
+
+    Optional testOp = Optional.of("test");
+
+
   }
 
 
