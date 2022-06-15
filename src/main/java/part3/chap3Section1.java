@@ -88,5 +88,22 @@ public class chap3Section1 {
             .stream()
             .collect(Collectors.toList());
     System.out.println(userList);
+
+    List<Integer> numbers = Arrays.asList(3, -4, 27, 9);
+    Boolean allpositive = numbers.stream()
+        .allMatch(number -> number > 0);
+    System.out.println(allpositive);
+
+    Boolean allUserCheck = users.stream()
+        .allMatch(User::getVerified);
+
+    System.out.println(allUserCheck);
+
+    Boolean anyUserCheck = users.stream()
+        .anyMatch(user -> user.getStatus()
+            .equals("ERROR"));
+
+    System.out.println(anyUserCheck);
+
   }
 }
